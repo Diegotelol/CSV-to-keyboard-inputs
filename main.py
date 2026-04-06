@@ -2,7 +2,6 @@
 REQUIREMENTS:
     pip install pyautogui pandas openpyxl pyperclip
 
-KILLSWITCH:
     Move your mouse to the TOP-LEFT corner of the screen at any time to abort.
 """
 
@@ -76,7 +75,6 @@ def process_part(part, interchanges):
     for i, interchange in enumerate(interchanges):
         log.info(f"    Interchange {i+1}: {interchange['int_line']} | {interchange['int_part']}")
 
-        # GRO line and part repeated for every interchange
         type_text(TARGET_LINE)
         pyautogui.press('enter')
         time.sleep(DELAY_SHORT)
@@ -85,7 +83,6 @@ def process_part(part, interchanges):
         pyautogui.press('enter')
         time.sleep(DELAY_LONG)
 
-        # Then the interchange line and part
         type_text(interchange['int_line'])
         pyautogui.press('enter')
         time.sleep(DELAY_SHORT)
@@ -97,9 +94,6 @@ def process_part(part, interchanges):
 
 def return_to_part_search():
     log.info("  Returning to part search...")
-    # TODO: fill in the key(s) to get back to the part search prompt
-    # pyautogui.press('escape')
-    # time.sleep(DELAY_SHORT)
     pass
 
 
